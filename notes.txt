@@ -1,0 +1,56 @@
+Python django
+---------------------------------------------
+Pre requirement:
+html + css + bootstrap + JS + tailwind +Python basic + MySQL + Postgres SQL
+
+django Introduction
+----------------------------------------------------------------------
+Q. What is mean by django?
+django is the famous framework for creating web applications using python.
+The following are some important points about the django.
+
+1. django is the framework
+---------------------------------------
+    It is high level python framework used to build web applications quickly.
+
+2. Based on python
+-----------------------------------------
+django framework written in python, so you need to have basic knowledge of python.
+
+3. Follows MVT pattern
+-----------------------------------------
+django uses MVT pattern it means,
+m ---> model(database)
+v --> view(logic)
+t --> template(your html files)
+
+4. Rapid development
+---------------------------------------
+It helps developers to build applications fast because many features already
+present in django.
+
+5. Built in admin module
+----------------------------------
+Django uses a ready to use admin interface to manage the database.
+
+6. ORM(Object Relational Mapping):
+------------------------------------
+Django allows you to interact with database using python code instead of any sql
+query.
+
+7. Scalable and Robust:
+---------------------------
+Django is used for large scale application that handle high traffic.
+
+8. Popular and Widely used
+---------------------------------
+Big companies like youtube, netflix, Instagram
+
+9. Secure Framework:
+----------------------------------
+It protects against common attack like,
+    a) SQL Injection Attack
+    b) CSRF token
+
+
+
