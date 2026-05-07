@@ -53,4 +53,244 @@ It protects against common attack like,
     b) CSRF token
 
 
+Q. What are the advantges of django?
+---------------------------------------------
+The following are some advantges of django.
+1. Fast development:
+------------------------
+Django comes with many built in features so you dont need to download any extra packges. 
+
+2. Easy to learn:
+-----------------------------
+Since django is based on python, it is simple and easy to learn. 
+
+3. Built in admin panal:
+---------------------------
+django provides a ready made admin dashboard, you dont need to write any single line of code to create dashboard. 
+
+4. ORM(Object Relational Mapping):
+----------------------------------
+You can interact with database without using any sql query with the help of python code. 
+
+5. Clean and Orgnized code(MVT):
+----------------------------------
+django follows Model View Template pattern which keeps code structured and easy to maintain.
+
+6. Built in authentication system:
+-----------------------------------
+django provides ready yo use login, logout and user management
+
+
+Q. django history
+---------------------------------------------
+
+
+
+Q. how to create our first application using django?
+------------------------------------------------------
+To starts with django you have pre requirements like,
+a) you have installed python:
+-------------------------------------
+Make sure you have installed python on your system using the command like,
+
+    python --version
+
+b) installed django:
+----------------------------
+You can write the command as below,
+    pip install django
+
+You can check django is installed or not using the following command,
+    django-admin --version
+
+c) Create a project using the following command,
+--------------------------------------------------
+    django-admin startproject projectname 
+
+Example:
+-----------------
+    django-admin startproject myproject1 
+
+When we execute above command, the django will create project in my current directory. 
+The project folder includes the following files.
+    myproject1
+        myproject1
+            __init__.py 
+            asgi.py 
+            settings.py
+            urls.py 
+            wsgi.py(webserver getway interface)
+
+        manage.py
+
+The manage.py file is the heart of django. The manage.py file can do 4 works for me.
+1. manage.py file can be used for to run my project.
+2. manage.py file can be used  to create the app.
+
+d) Run the development server:
+---------------------------------------
+To run my project i can use the command as below, 
+    python manage.py runserver
+
+When we execute the above command it start the development server at below url, 
+    http://127.0.0.1:8000/
+
+It uses the default port number 8000. You can change the port number using the below command, 
+    python manage.py runserver 7878
+
+Django uses the default database sqlite3.
+
+e) how to create app inside the project?
+----------------------------------------------------
+In django project we can create multiple apps inside one project. 
+We can create the app using the following command,
+
+    python manage.py startapp app_name
+Example:
+-----------------
+    python manage.py startapp myapp
+
+When we execute above command, the django create one app for me. The app folder contains the following files. 
+
+    myapp
+        __init__.py
+        admin.py
+        apps.py
+        models.py
+        tests.py
+        views.py 
+django does not know which app is created. To tell to the django you need to register app name inside the settings.py file in the section called INSTALLED_APP
+
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'myapp'
+]
+
+        postman  --> api testing tool
+
+
+Q. Explain the folder structure of django project?
+-----------------------------------------------------
+myproject1
+        myproject1
+            __init__.py 
+            asgi.py 
+            settings.py
+            urls.py 
+            wsgi.py(webserver getway interface)
+        myapp
+            migrations   ---> folder
+            __init__.py
+            admin.py
+            apps.py
+            models.py
+            tests.py
+            views.py 
+        manage.py
+
+Explanation of Each file:
+---------------------------------------------------
+1. manage.py 
+-------------------
+a) main command-line utility of django project.
+b) Used to run the server, creating the app, creating the superuser and perform the database migrations.  
+
+2. __init__.py
+-----------------------
+Basically it is constructor that can be used for to intilise the files.
+usually it is empty.
+
+3.settings.py
+------------------------
+a) Most important configuaration file contains
+    1. database setting 
+    2. app installed 
+    3. Static files 
+    4. Templates
+
+4. urls.py
+--------------------------
+a) handles website urls, it means it will add address for the page.  
+b) Connect url path to the view.
+
+5. wsgi.py 
+--------------------------
+a) Used for deployment in production server. 
+b) helps web servers commuicate with django.
+
+6. migrations folder 
+----------------------------
+a) Stores the database migrations files. 
+b) Track database changes
+
+7. admin.py
+-----------------------------
+Used to register models in django admin panal. 
+
+8. models.py
+---------------------------
+Used to create database tables using python classes.  
+
+9. views.py
+------------------------
+This file contains the bussiness logic and returns the response user. 
+=================================================================================
+
+Templates in django
+-------------------------------
+Q. What is mean by templates in django?
+-----------------------------------------
+Templates in django are used to create the frontend(UI) of web application.
+They help us display the data in proper html format to the user.
+
+In simple word we can say that,
+
+    Templates = HTML Files + Dynamic Data
+
+Django templates allows us to combine:
+    a) html
+    b) css 
+    c) bootstrap
+    d) javascript
+    e) Dynamic Data from python
+
+
+Q. how to create templates using django?
+------------------------------------------------
+1. Create a project using the below command,
+    django-admin startproject projectname 
+
+2. Go inside the project 
+    cd projectname 
+
+3. Create the app using the below command,
+    python manage.py startapp appname 
+
+4. Register the app inside the settings.py.
+    INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'appname'
+]
+
+5. Create the Templates folder under the project level. Inside the templates create another folder and gives name it as your appname. So inside the appname folder create one html file called as index.html 
+
+6. Register the templates folder inside the settings.py file.
+    1. Write down the below code 
+        import os
+        BASE_DIR = Path(__file__).resolve().parent.parent
+        TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
+
+    2. Register TEMPLATES_DIR inside the section called as TEMPLATES,
+        'DIRS': [TEMPLATES_DIR],
+
 
