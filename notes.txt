@@ -293,4 +293,62 @@ Q. how to create templates using django?
     2. Register TEMPLATES_DIR inside the section called as TEMPLATES,
         'DIRS': [TEMPLATES_DIR],
 
+7. Write down the bussiness logic to call the page inside views.py file.  
+8. Create the url to call this bussiness logic inside the urls.py file. 
+
+=====================================================================================
+
+How We can load static files?
+------------------------------------
+Static files are files that do not change frequently.
+Examples:
+--------------
+html
+css
+javascript
+images
+videos 
+audio
+
+Django serves these files using static folder. 
+
+What are the steps to create static files and load css?
+-------------------------------------------------------------------
+1. Create a folder called as static under the project level.
+2. Inside the static folder create folders like css, imgs, js etc..
+3. Inside the css folder create a one file called as style.css file.
+4. Check STATIC_URL = 'static/' this line present inside the settings.py. If not add this line. 
+5. You can also configure the static path with your project path using the below code,
+
+    # Directories for project-level static files
+        STATICFILES_DIRS = [
+            os.path.join(BASE_DIR, "static"),
+        ]   
+
+6. Go to index.html file and add one django tag called as {% load static %} it means the static folder activate on index.html. 
+7. Link css file to the index.html by using below code, 
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+-------------------------------------------------------------------------------------
+
+How we can load images on page?
+-----------------------------------------
+1. Perform all the same step upto 6 points.
+2. Add images inside image folder.
+3. In html create html tag to use images like,
+    <img src = "{% static 'images/jerry.png' %}"
+
+------------------------------------------------------------------------------------
+How we can load js file?
+-----------------------------------
+1. Perform all the same step upto 6 points.
+2. load path inside the body tag like,
+    <script src = "{% static 'js/main.js' %}"></script>
+
+-------------------------------------------------------------------------------
+how to load bootstrap?
+------------------------------
+
+
 

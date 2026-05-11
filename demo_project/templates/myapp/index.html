@@ -1,11 +1,19 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
   <body>
     <h1>Welcome to django Web Application...😆</h1>
+    <img src="{% static 'images/Jerry_Mouse.png' %}" />
+    <form>
+      <button onclick="loadMessage()">Click Me</button>
+    </form>
+
+    <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>
