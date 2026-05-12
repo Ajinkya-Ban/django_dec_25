@@ -15,11 +15,11 @@
         </div>
         <div class="menu">
           <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="">Services</a></li>
             <li><a href="">Products</a></li>
-            <li><a href="">Contact</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
             <li><a href="">Register</a></li>
           </ul>
         </div>
@@ -39,6 +39,10 @@
         <div class="box">
           <img src="{% static 'imgs/p3.jpeg' %}" />
         </div>
+      </div>
+
+      <div class="footer">
+        <p>This website maintain by ByteCode &copy;2026</p>
       </div>
     </div>
   </body>

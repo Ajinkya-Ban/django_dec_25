@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo-menu">
+        <div class="logo">
+          <h1>ByteCode</h1>
+        </div>
+        <div class="menu">
+          <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Products</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="">Register</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="about-section">
+        <div class="photo">
+          <img src="{% static 'imgs/4583.jpg' %}" />
+        </div>
+        <div class="text">
+          <div class="about-content">
+            <h2>Who We Are</h2>
+
+            <p>
+              ByteCode is a technology company dedicated to providing
+              high-quality web development services, professional IT training
+              classes, and internship opportunities for students.
+            </p>
+
+            <p>
+              We help businesses build modern websites and applications while
+              guiding students to develop practical skills required in the
+              software industry.
+            </p>
+
+            <p>
+              Our goal is to bridge the gap between academic learning and
+              industry requirements through hands-on projects and real-time
+              development experience.
+            </p>
+          </div>
+
+          <section class="services">
+            <h2>Our Services</h2>
+
+            <div class="service-boxes">
+              <div class="box1">
+                <h3>Web Development</h3>
+                <p>
+                  We create responsive, secure, and modern websites using the
+                  latest technologies for startups, businesses, and
+                  organizations.
+                </p>
+              </div>
+
+              <div class="box1">
+                <h3>IT Classes</h3>
+                <p>
+                  ByteCode offers practical training in web development,
+                  programming languages, databases, and full-stack technologies.
+                </p>
+              </div>
+
+              <div class="box1">
+                <h3>Internships</h3>
+                <p>
+                  We provide real-time internship programs where students work
+                  on live projects and gain industry-level experience.
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>This website maintain by ByteCode &copy;2026</p>
+      </div>
+    </div>
+  </body>
+</html>
