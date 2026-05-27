@@ -347,8 +347,178 @@ How we can load js file?
     <script src = "{% static 'js/main.js' %}"></script>
 
 -------------------------------------------------------------------------------
-how to load bootstrap?
-------------------------------
+
+Q. How we can avoid writing the same header and footer on every page?
+-----------------------------------------------------------------------------
+
+Q. how i can use bootstrap?
+---------------------------------------------------------------------------
+1. download the cdn links from bootstrap website and put it into header and footer
+2. the bootstrap has following structure like,
+	a) container      ---> 80%
+	b) container-fluid ---> 100%
+	
+3. every container or container-fluid has row.
+4. every row has column, there are 12 column in single row.
+
+We can also use responsive classes of bootstrap?
+--------------------------------------------------------------
+1. sm --> small devices
+2. md --> medium devices
+3. lg --> large screen
+4. xl --> xtra large
+5. xxl --> xtra xtra large
+
+-----------------------------------------------------------------------------
+Q. What is mean by superuser and how we can create superuser in django?
+-----------------------------------------------------------------------------
+A superuser in django is a special admin user who has all permissions in the django project.
+The superuser can manage the entire website or application using django admin panal.
+
+Q. what are the features of superuser?
+-------------------------------------------------------
+A django superuser can:
+	1. Add new user
+	2. Update user information
+	3. Delete user
+	4. Manage database records
+	5. Access django admin panal
+	6. Control all applications in project.
+	7. Assign permissions to other user.
+	
+	
+Q. How django Stores superuser?
+--------------------------------------------
+In django superuser data store inside a table called as auth_user. The following are some fields present in table,
+	a) username
+	b) email
+	c) password
+	d) is_staff
+	e) is_superuser
+	
+	
+Q. How we can create superuser?
+-------------------------------------------------
+1. Create django project using command 
+	django-admin startproject superU
+	
+2. Go inside the project,
+	cd superU
+	
+3. Create one app using the command,
+	python manage.py startapp myapp
+	
+4. For creating the superuser you first have MySQL Database. If you have MySQL than create one database inside MYSQL.
+	create database django_dec_26
+	
+5. Update the database settings for MySQL in settings.py file 
+	
+	DATABASES = {
+    	'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_dec_26',
+        'USER': 'root',
+        'PASSWORD': 'admin123',
+        'HOST': 'localhost',  # Or the IP address of your DB server
+        'PORT': '3306',       # Default MySQL port
+    }
+}
+
+6. Create the tables inside the database, you can need the migrations command,
+	python manage.py makemigrations
+	python manage.py migrate
+	
+
+7. After creating the migrations, we need to create superuser,
+	python manage.py createsuperuser
+	
+	it will ask some questions like username, email, password
+
+8. After creating the superuser run the server
+	http://127.0.0.1:7878/admin/
+	
+	Enter username
+	enter password and hit login button.
+======================================================================================================================
+
+	Models in django(ORM)
+	---------------------------------
+	In django, a Model is used to create and manage database tables using python classes.
+	A model represent structure of your data.
+	
+	For Example
+	----------------
+	Employee information
+	Student information
+	
+	All above the information stored in model.
+	
+	In django, model inherit from class model.Model
+	This class contains the following information,
+	a) Table name
+	b) columns name
+	c) data type
+	
+	Django automatically creates the database table from Model.
+	
+	Inside the table we pass some common model fields.
+	------------------------------------------------------
+	1. CharField   --> Text
+	2. IntegerField  --> Numbers
+	3. EmailField   ---> Email
+	4. DateField   ---> Date
+	5. BooleanField   ---> True or False
+	6. TextField   ---> Large Text
+	7. ImageField  ---> Images 
+	8. FileField   ---> File upload
+	
+	What are the advantge of model?
+	---------------------------------------------------------
+	1. No need to write sql query.
+	2. Easy CRUD operations.
+	3. Easy admin management
+	4. Secure and Fast
+	5. Automatic table creation
+	
+	
+	How i can filter the data using admin panal?
+	-----------------------------------------------------------
+	In django admin panel you can filter the data using following keyword
+	
+	1. list_filter
+	2. list_display
+	3. search_fields
+	
+	Once the model code writing completed than we need to fire two command for database migrations which is listed
+	below,
+	
+	1. python manage.py makemigrations
+	2. python manage.py migrate
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
 
 
 
